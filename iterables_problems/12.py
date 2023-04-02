@@ -18,7 +18,8 @@ def cycle(iter):
             except StopIteration:
                 self.iterator = self.iterable.__iter__()
                 return self.iterator.__next__()
-    
+        def __iter__(self):
+            return self 
     return Cycle_iterable(iter)
 cl = cycle([1,2,3])
 print(take(cl, 20))
