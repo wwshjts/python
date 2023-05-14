@@ -1,8 +1,7 @@
 from iterables_examples import take, LinkedList
 def chain(*args):
     for it in args:
-        for item in it:
-            yield item 
+        yield from it
 
 my_list = LinkedList()
 my_list.add_to_head(0)

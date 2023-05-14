@@ -6,13 +6,8 @@ my_list.add_to_tail(1)
 my_list.add_to_tail(5)
 
 def cycle(iter):
-    saved = []
-    for item in iter:
-        yield item
-        saved.append(item)
-    while saved:
-        for item in saved:
-              yield item
+    while True:
+        yield from iter
 cl = cycle([1,2,3])
 print(take(cl, 20))
 print(take(cycle(my_list), 10))
